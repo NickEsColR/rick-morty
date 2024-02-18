@@ -1,3 +1,4 @@
+import './CharacterList.css';
 import { CharacterItem } from "../character-item/CharacterItem";
 
 export const CharacterList = ({characters}) => {
