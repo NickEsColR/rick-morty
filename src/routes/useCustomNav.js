@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { PATHS } from "../Constants/Paths";
 import { useState } from "react";
 
@@ -7,7 +7,8 @@ import { useState } from "react";
  * @returns {Object}
  */
 export const useCustomNav = () => {
-  const [activeItem, setActiveItem] = useState(PATHS.HOME);
+  const currentPath = useLocation().pathname;
+  const [activeItem, setActiveItem] = useState(currentPath);
 
   const navigate = useNavigate();
 
