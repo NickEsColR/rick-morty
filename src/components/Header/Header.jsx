@@ -1,17 +1,45 @@
 import "./Header.css";
 import iconRick from "../../assets/img/rick-sanchez-100.png";
+import { useCustomNav } from "../../routes/useCustomNav";
+import { PATHS } from "../../Constants/Paths";
 
 export const Header = () => {
+  const {
+    activeItem,
+    navigateHome,
+    navigateCharacters,
+    navigateLocations,
+    navigateEpisodes,
+  } = useCustomNav();
+
   return (
     <header className="app-header">
-      <div className="logo-container">
+      <div className="logo-container" onClick={navigateHome}>
         <img src={iconRick} alt="Logo" />
         <h1 className="title">Rick & Morty</h1>
       </div>
       <div className="menu">
-        <span className="menu-item">Characters</span>
-        <span className="menu-item">Locations</span>
-        <span className="menu-item">Episodes</span>
+        <span
+          className={`menu-item 
+          ${activeItem === PATHS.CHARACTERS ? "active" : ""}`}
+          onClick={navigateCharacters}
+        >
+          Characters
+        </span>
+        <span
+          className={`menu-item 
+          ${activeItem === PATHS.LOCATIONS ? "active" : ""}`}
+          onClick={navigateLocations}
+        >
+          Locations
+        </span>
+        <span
+          className={`menu-item 
+          ${activeItem === PATHS.EPISODES ? "active" : ""}`}
+          onClick={navigateEpisodes}
+        >
+          Episodes
+        </span>
       </div>
     </header>
   );
