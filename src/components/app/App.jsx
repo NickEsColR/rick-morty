@@ -1,12 +1,11 @@
 import "./App.css";
 import { Characters } from "../../Pages/Characters/Characters";
+import { Header } from "../Header/Header";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1 className="title">Rick & Morty</h1>
-      </header>
+      <Header />
       <main className="main">
         <Characters />
       </main>
