@@ -1,5 +1,5 @@
 import './CharacterItem.css';
-import { Card } from "../../../components/card/Card";
+import { Card } from "../../../../components/card/Card";
 
 export const CharacterItem = ({ character }) => {
   const Image = () => <img src={character.image} alt={character.name} />;
