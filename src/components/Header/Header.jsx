@@ -3,6 +3,11 @@ import iconRick from "../../assets/img/rick-sanchez-100.png";
 import { useCustomNav } from "../../routes/useCustomNav";
 import { PATHS } from "../../Constants/Paths";
 
+/**
+ * Component Header that contains the logo and the navigation menu.
+ * Uses the useCustomNav hook to handle the navigation.
+ * @returns {JSX.Element}
+ */
 export const Header = () => {
   const {
     activeItem,
