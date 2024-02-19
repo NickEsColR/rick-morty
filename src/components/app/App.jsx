@@ -1,14 +1,14 @@
 import "./App.css";
-import { Characters } from "../../Pages/Characters/Characters";
 import { Header } from "../Header/Header";
 import { Footer } from "../footer/Footer";
+import { Router } from "../../routes/Router";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <main className="main">
-        <Characters />
+        <Router />
       </main>
       <Footer />
     </div>
