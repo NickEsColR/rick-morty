@@ -1,6 +1,7 @@
 import "./App.css";
 import { Characters } from "../../Pages/Characters/Characters";
 import { Header } from "../Header/Header";
+import { Footer } from "../footer/Footer";
 
 function App() {
   return (
@@ -9,12 +10,7 @@ function App() {
       <main className="main">
         <Characters />
       </main>
-      <footer>
-        <p>
-          Developed by <a href="https://github.com/NickEsColR">NickEsColR</a>
-        </p>
-        <p>&copy; 2024</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

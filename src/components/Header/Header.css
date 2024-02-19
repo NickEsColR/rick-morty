@@ -48,3 +48,10 @@
 .menu-item:hover{
   background-color: #3f3f3f;
 }
+
+.title {
+  color: #738f93;
+  font-size: 40px;
+  font-family: fantasy, sans-serif;
+  margin-bottom: 0;
+}

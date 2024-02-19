@@ -6,13 +6,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.title {
-  color: #738f93;
-  font-size: 40px;
-  font-family: fantasy, sans-serif;
-  margin-bottom: 0;
-}
-
 .img-home {
   width: 500px;
   padding: 50px;
