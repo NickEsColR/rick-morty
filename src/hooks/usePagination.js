@@ -2,8 +2,18 @@ import { useContext } from "react";
 import { PaginationContext } from "../contexts/PaginationContext";
 
 export const usePagination = () => {
-  const [actualPage, setActualPage, totalPages, setTotalPages, pagesList, setPagesList] =
-    useContext(PaginationContext);
+  const [
+    actualPage,
+    setActualPage,
+    totalPages,
+    setTotalPages,
+    pagesList,
+    setPagesList,
+    isFirtsPage,
+    setIsFirtsPage,
+    isLastPage,
+    setIsLastPage,
+  ] = useContext(PaginationContext);
 
   const getShowPages = (actualPage, totalPages) => {
     const after = totalPages - actualPage;
@@ -22,10 +32,13 @@ export const usePagination = () => {
 
   useEffect(() => {
     setPagesList(getShowPages(actualPage, totalPages));
-  }, [actualPage, totalPages])
-  
+    setIsFirtsPage(actualPage === 1);
+    setIsLastPage(actualPage === totalPages);
+  }, [actualPage, totalPages]);
 
-  const showPages = getShowPages(actualPage, totalPages);
-
-  return <div>usePagination</div>;
+  return {
+    pagesList,
+    isFirtsPage,
+    isLastPage,
+  }
 };

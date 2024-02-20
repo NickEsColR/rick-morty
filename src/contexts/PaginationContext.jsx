@@ -12,6 +12,8 @@ export const PaginationContextProvider = ({ children }) => {
   const [actualPage, setActualPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [pagesList, setPagesList] = useState([]);
+  const [isFirtsPage, setIsFirtsPage] = useState(true);
+  const [isLastPage, setIsLastPage] = useState(false);
 
   return (
     <PaginationContext.Provider
@@ -22,6 +24,10 @@ export const PaginationContextProvider = ({ children }) => {
         setTotalPages,
         pagesList,
         setPagesList,
+        isFirtsPage,
+        setIsFirtsPage,
+        isLastPage,
+        setIsLastPage,
       ]}
     >
       {children}
