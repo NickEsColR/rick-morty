@@ -11,9 +11,7 @@ export const useCharacters = () => {
     useContext(CharacterContext);
 
   const reqApi = useCallback(async () => {
-    console.log("useCharacters");
     const characterApi = await ReqApi("character");
-    console.log(characterApi);
     setCharacters(characterApi.results);
     setLoading(false);
   },[setCharacters, setLoading]);

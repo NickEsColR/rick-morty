@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { PaginationContext } from "../contexts/PaginationContext";
+import { ReqApi } from "../utils/API/ReqApi";
 
 export const usePagination = () => {
   const [
@@ -30,6 +31,14 @@ export const usePagination = () => {
     return pages;
   };
 
+  const changeListPage = async (page, resource, filters = "") => {
+    setActualPage(page);
+    const options = `?page=${page}${filters}`;
+    const response = await ReqApi(resource, options);
+    setTotalPages(response.info.pages);
+    return response.results;
+  };
+
   useEffect(() => {
     setPagesList(getShowPages(actualPage, totalPages));
     setIsFirtsPage(actualPage === 1);
@@ -40,5 +49,6 @@ export const usePagination = () => {
     pagesList,
     isFirtsPage,
     isLastPage,
+    changeListPage,
   }
 };
