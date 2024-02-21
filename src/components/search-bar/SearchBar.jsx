@@ -9,7 +9,7 @@ export const SearchBar = ({ labelText }) => {
   return (
     <div className="search-bar-container">
       <label>{labelText}: </label>
-      <input type="text" name={labelText}/>
+      <input className="search-bar" type="text" name={labelText}/>
     </div>
   );
 };
