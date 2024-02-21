@@ -1,12 +1,19 @@
 .search-bar-container{
   width: 100%;
-  display: inline;
+  display: grid;
+  grid-template-columns: 15% 85%;
+}
 
-  .search-bar{
-    width: 75%;
-    padding: 5px;
-    border: 2px solid #000;
-    border-radius: 5px;
-    font-size: 16px;
-  }
+.search-bar-container label{
+  grid-column: 1;
+}
+
+.search-bar{
+  width: 75%;
+  padding: 5px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  font-size: 16px;
+
+  grid-column: 2;
 }
