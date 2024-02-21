@@ -1,5 +1,18 @@
+.dropdown-menu{
+  display: grid;
+  grid-template-columns: 15% 85%;
+  align-items: center;
+}
+
+.dropdown-menu label{
+  grid-column: 1;
+}
+
 .dropdown-menu select{
+  grid-column: 2;
+
   border: 1px solid #000;
+  width: 100%;
   padding: 5px;
   margin: 5px;
   border-radius: 5px;
