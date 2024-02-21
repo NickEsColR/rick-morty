@@ -1,17 +1,68 @@
-import './Pagination.css'
+import { usePagination } from "../../hooks/usePagination";
+import "./Pagination.css";
 
-export const Pagination = () => {
+export const Pagination = ({ resource }) => {
+  const {
+    actualPage,
+    totalPages,
+    pagesList,
+    isFirtsPage,
+    isLastPage,
+    changeListPage,
+  } = usePagination();
+
   return (
-    <nav className='pagination' role='navigation' aria-label='pagination'>
-      <span className='pagination-btn'>&lt;</span>
-      <ul className='pagination-list'>
-        <li><span className='pagination-btn active'>1</span></li>
-        <li><span className='pagination-btn'>2</span></li>
-        <li><span className='pagination-btn'>3</span></li>
-        <li><span className='pagination-btn'>4</span></li>
-        <li><span className='pagination-btn'>5</span></li>
+    <nav className="pagination" role="navigation" aria-label="pagination">
+      {isFirtsPage ? (
+        ""
+      ) : (
+        <>
+          <span
+            className="pagination-btn"
+            onClick={() => changeListPage(1, resource)}
+          >
+            &lt;&lt;
+          </span>
+          <span
+            className="pagination-btn"
+            onClick={() => changeListPage(actualPage - 1, resource)}
+          >
+            &lt;
+          </span>
+        </>
+      )}
+      <ul className="pagination-list">
+        {pagesList.map((page) => (
+          <li key={page}>
+            <span
+              className={`pagination-btn ${
+                actualPage === page ? "active" : ""
+              }`}
+              onClick={() => changeListPage(page, resource)}
+            >
+              {page}
+            </span>
+          </li>
+        ))}
       </ul>
-      <span className='pagination-btn'>&gt;</span>
+      {isLastPage ? (
+        ""
+      ) : (
+        <>
+          <span
+            className="pagination-btn"
+            onClick={() => changeListPage(actualPage + 1, resource)}
+          >
+            &gt;
+          </span>
+          <span
+            className="pagination-btn"
+            onClick={() => changeListPage(totalPages, resource)}
+          >
+            &gt;&gt;
+          </span>
+        </>
+      )}
     </nav>
-  )
-}
+  );
+};

@@ -1,5 +1,3 @@
-export const PATHS = {
-  CHARACTERS: "character",
-  LOCATIONS: "location",
-  EPISODES: "episode",
-}
+export const CHARACTERS = "character";
+export const LOCATIONS = "location";
+export const EPISODES = "episode";
