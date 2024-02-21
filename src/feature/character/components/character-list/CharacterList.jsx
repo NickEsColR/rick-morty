@@ -1,20 +1,35 @@
-import './CharacterList.css';
+import "./CharacterList.css";
 import { CharacterItem } from "../character-item/CharacterItem";
-import { useCharacters } from '../../hooks/useCharacters';
+import { useCharacters } from "../../hooks/useCharacters";
+import { Pagination } from "../../../../components/pagination/Pagination";
+import { PaginationContextProvider } from "../../../../contexts/PaginationContext";
+import { CHARACTERS } from "../../../../Constants/ResourcesAPI";
 
+/**
+ * Component that renders the list of characters
+ * @returns {JSX.Element}
+ */
 export const CharacterList = () => {
-  const {characters, loading} = useCharacters();
-  if(loading){
-    return <h1>Loading...</h1>
-  }else if(!characters){
-    <h1>Error ocurred, characters not found</h1>
-  }
-  
+  const { characters, setCharacters, loading, setLoading } = useCharacters();
+
   return (
-    <div className="container-characters">
-      {characters.map((character) => (
-        <CharacterItem key={character.id} character={character} />
-      ))}
-    </div>
+    <>
+      {loading ? (
+        <h1>Loading...</h1>
+      ) : (
+        <div className="container-characters">
+          {characters.map((character) => (
+            <CharacterItem key={character.id} character={character} />
+          ))}
+        </div>
+      )}
+      <PaginationContextProvider>
+        <Pagination
+          resource={CHARACTERS}
+          setLoading={setLoading}
+          setItems={setCharacters}
+        />
+      </PaginationContextProvider>
+    </>
   );
 };
