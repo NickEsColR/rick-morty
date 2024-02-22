@@ -14,7 +14,7 @@ export const Characters = () => {
       <CharacterContextProvider>
         <CharacterFilterContextProvider>
           <div className="characters">
-            <h1>Characters</h1>
+            <h1 className="title">Characters</h1>
             <CharacterList />
           </div>
         </CharacterFilterContextProvider>
