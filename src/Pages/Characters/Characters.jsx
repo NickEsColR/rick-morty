@@ -1,6 +1,8 @@
 import "./Characters.css";
 import { CharacterList } from "../../feature/character/components/character-list/CharacterList";
 import { CharacterContextProvider } from "../../feature/character/contexts/CharacterContext";
+import { PaginationContextProvider } from "../../contexts/PaginationContext";
+import { CharacterFilterContextProvider } from "../../feature/character/contexts/CharacterFilterContext";
 
 /**
  * Component that renders characters page
@@ -8,11 +10,15 @@ import { CharacterContextProvider } from "../../feature/character/contexts/Chara
  */
 export const Characters = () => {
   return (
-    <CharacterContextProvider>
-      <div className="characters">
-        <h1>Characters</h1>
-        <CharacterList />
-      </div>
-    </CharacterContextProvider>
+    <PaginationContextProvider>
+      <CharacterContextProvider>
+        <CharacterFilterContextProvider>
+          <div className="characters">
+            <h1>Characters</h1>
+            <CharacterList />
+          </div>
+        </CharacterFilterContextProvider>
+      </CharacterContextProvider>
+    </PaginationContextProvider>
   );
 };

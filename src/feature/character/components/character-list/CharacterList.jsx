@@ -26,13 +26,11 @@ export const CharacterList = () => {
           </div>
         </CharacterFilter>
       )}
-      <PaginationContextProvider>
         <Pagination
           resource={CHARACTERS}
           setLoading={setLoading}
           setItems={setCharacters}
         />
-      </PaginationContextProvider>
     </>
   );
 };

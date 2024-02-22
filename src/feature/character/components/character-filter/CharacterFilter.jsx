@@ -12,6 +12,10 @@ export const CharacterFilter = ({ children }) => {
         <SearchBar labelText="species" />
         <DropdownMenu labelText="gender" options={GENDER} />
         <SearchBar labelText="type" />
+        <div className="btn-container">
+          <button>Filter</button>
+          <button>Clear</button>
+        </div>
       </div>
       {children}
     </>
