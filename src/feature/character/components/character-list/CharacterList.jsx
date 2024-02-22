@@ -4,6 +4,7 @@ import { useCharacters } from "../../hooks/useCharacters";
 import { Pagination } from "../../../../components/pagination/Pagination";
 import { PaginationContextProvider } from "../../../../contexts/PaginationContext";
 import { CHARACTERS } from "../../../../Constants/ResourcesAPI";
+import { CharacterFilter } from "../character-filter/CharacterFilter";
 
 /**
  * Component that renders the list of characters
@@ -17,11 +18,13 @@ export const CharacterList = () => {
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        <div className="container-characters">
-          {characters.map((character) => (
-            <CharacterItem key={character.id} character={character} />
-          ))}
-        </div>
+        <CharacterFilter>
+          <div className="container-characters">
+            {characters.map((character) => (
+              <CharacterItem key={character.id} character={character} />
+            ))}
+          </div>
+        </CharacterFilter>
       )}
       <PaginationContextProvider>
         <Pagination
