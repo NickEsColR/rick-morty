@@ -34,6 +34,9 @@ export const usePagination = () => {
       const options = `?page=${page}${filters}`;
       const response = await ReqApi(resource, options);
       setActualPage(page);
+      if (response.error) {
+        return;
+      }
       setTotalPages(response.info.pages);
       setItems(response.results);
       setLoading(false);

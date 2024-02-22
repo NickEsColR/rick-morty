@@ -4,6 +4,10 @@ import { CHARACTERS } from "../../../Constants/ResourcesAPI";
 import { useCharacters } from "./useCharacters";
 import { CharacterFilterContext } from "../contexts/CharacterFilterContext";
 
+/**
+ * Hook to filter the characters
+ * @returns {Object} - Object with the properties and methods to filter the characters
+ */
 export const useCharacterFilter = () => {
   const {
     name,
@@ -17,17 +21,23 @@ export const useCharacterFilter = () => {
     gender,
     setGender,
   } = useContext(CharacterFilterContext);
-
+  
   const { changeListPage } = usePagination();
 
   const { setCharacters, setLoading } = useCharacters();
 
+  /**
+   * Method to filter the characters
+   */
   const filter = () => {
     setLoading(true);
-    const filter = `name=${name}&status=${status}&species=${species}&type=${type}&gender${gender}`;
+    const filter = `&name=${name}&status=${status}&species=${species}&type=${type}&gender${gender}`;
     changeListPage(1, CHARACTERS, setLoading, setCharacters, filter);
   };
 
+  /**
+   * Method to clear the filters
+   */
   const clear = () => {
     setName("");
     setStatus("");
@@ -38,22 +48,42 @@ export const useCharacterFilter = () => {
     changeListPage(1, CHARACTERS, setLoading, setCharacters);
   };
 
+  /**
+   * Function to handle the name input change
+   * @param {Object} e - Event object
+   */
   const onChangeName = (e) => {
     setName(e.target.value);
   };
 
+  /**
+   * Function to handle the species input change
+   * @param {Object} e - Event object
+   */
   const onChangeSpecies = (e) => {
     setSpecies(e.target.value);
   };
 
+  /**
+   * Function to handle the type input change
+   * @param {Object} e - Event object
+   */
   const onChangeType = (e) => {
     setType(e.target.value);
   };
 
+  /**
+   * Function to handle the gender input change
+   * @param {Object} e - Event object
+   */
   const onChangeGender = (e) => {
     setGender(e.target.value);
   };
 
+  /**
+   * Function to handle the status input change
+   * @param {Object} e - Event object
+   */
   const onChangeStatus = (e) => {
     setStatus(e.target.value);
   };

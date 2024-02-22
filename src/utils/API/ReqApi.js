@@ -5,8 +5,9 @@
  * @returns {JSON} - The data fetched from the API
  */
 export const ReqApi = async (resource, options="") => {
-  const api = await fetch(`https://rickandmortyapi.com/api/${resource}/${options}`);
+  const url = `https://rickandmortyapi.com/api/${resource}/${options}`;
+  const api = await fetch(url);
   const response = await api.json();
-
+  
   return (response);
 };

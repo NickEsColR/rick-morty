@@ -13,7 +13,7 @@ export const DropdownMenu = ({labelText, options, value, onChange}) => {
   return (
     <div className='dropdown-menu'>
       <label>{labelText}: </label>
-      <select defaultValue={''} value={value} onChange={onChange}>
+      <select value={value} onChange={onChange}>
         <option value='' disabled hidden>Select an option</option>
         {options.map((option, index) => (
           <option key={index} value={option}>{option}</option>
