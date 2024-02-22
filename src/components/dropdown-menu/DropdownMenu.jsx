@@ -5,7 +5,7 @@ export const DropdownMenu = ({labelText, options}) => {
     <div className='dropdown-menu'>
       <label>{labelText}: </label>
       <select defaultValue={''}>
-        <option value='' disabled>Select an option</option>
+        <option value='' disabled hidden>Select an option</option>
         {options.map((option, index) => (
           <option key={index} value={option}>{option}</option>
         ))}

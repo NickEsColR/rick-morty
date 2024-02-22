@@ -1,0 +1,19 @@
+.filter-container{
+  display: grid;
+  grid-template-columns: 55% 45%;
+  grid-auto-rows: 50px;
+  gap: 0;
+  margin: 0 15vw 2px 15vw;
+  padding: 1%;
+
+  box-sizing:border-box;
+  border: 1px solid #000;
+}
+
+.search-bar-container{
+  height: 20px;
+}
+
+.dropdown-menu{
+  height: 20px;
+}
