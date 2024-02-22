@@ -3,6 +3,7 @@ import { CharacterList } from "../../feature/character/components/character-list
 import { CharacterContextProvider } from "../../feature/character/contexts/CharacterContext";
 import { PaginationContextProvider } from "../../contexts/PaginationContext";
 import { CharacterFilterContextProvider } from "../../feature/character/contexts/CharacterFilterContext";
+import { CharacterFilter } from "../../feature/character/components/character-filter/CharacterFilter";
 
 /**
  * Component that renders characters page
@@ -15,7 +16,9 @@ export const Characters = () => {
         <CharacterFilterContextProvider>
           <div className="characters">
             <h1 className="title">Characters</h1>
-            <CharacterList />
+            <CharacterFilter>
+              <CharacterList />
+            </CharacterFilter>
           </div>
         </CharacterFilterContextProvider>
       </CharacterContextProvider>

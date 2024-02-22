@@ -17,13 +17,11 @@ export const CharacterList = () => {
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        <CharacterFilter>
           <div className="container-characters">
             {characters.map((character) => (
               <CharacterItem key={character.id} character={character} />
             ))}
           </div>
-        </CharacterFilter>
       )}
         <Pagination
           resource={CHARACTERS}

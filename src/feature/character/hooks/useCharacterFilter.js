@@ -2,9 +2,10 @@ import { useContext } from "react";
 import { usePagination } from "../../../hooks/usePagination";
 import { CHARACTERS } from "../../../Constants/ResourcesAPI";
 import { useCharacters } from "./useCharacters";
+import { CharacterFilterContext } from "../contexts/CharacterFilterContext";
 
 export const useCharacterFilter = () => {
-  const [
+  const {
     name,
     setName,
     status,
@@ -15,21 +16,16 @@ export const useCharacterFilter = () => {
     setType,
     gender,
     setGender,
-  ] = useContext(CharacterFilterContext);
+  } = useContext(CharacterFilterContext);
 
-  const [changeListPage] = usePagination();
+  const { changeListPage } = usePagination();
 
-  const [setCharacters, setLoading] = useCharacters();
+  const { setCharacters, setLoading } = useCharacters();
 
-  const filter = (newName, newStatus, newSpecies, newType, newGender) => {
+  const filter = () => {
     setLoading(true);
-    setName(newName);
-    setStatus(newStatus);
-    setSpecies(newSpecies);
-    setType(newType);
-    setGender(newGender);
-    const filters = `&name=${newName}&status=${newStatus}&species=${newSpecies}&type=${newType}&gender=${newGender}`;
-    changeListPage(1, CHARACTERS, setLoading, setCharacters, filters);
+    const filter = `name=${name}&status=${status}&species=${species}&type=${type}&gender${gender}`;
+    changeListPage(1, CHARACTERS, setLoading, setCharacters, filter);
   };
 
   const clear = () => {
@@ -38,6 +34,28 @@ export const useCharacterFilter = () => {
     setSpecies("");
     setType("");
     setGender("");
+    setLoading(true);
+    changeListPage(1, CHARACTERS, setLoading, setCharacters);
+  };
+
+  const onChangeName = (e) => {
+    setName(e.target.value);
+  };
+
+  const onChangeSpecies = (e) => {
+    setSpecies(e.target.value);
+  };
+
+  const onChangeType = (e) => {
+    setType(e.target.value);
+  };
+
+  const onChangeGender = (e) => {
+    setGender(e.target.value);
+  };
+
+  const onChangeStatus = (e) => {
+    setStatus(e.target.value);
   };
 
   return {
@@ -46,6 +64,11 @@ export const useCharacterFilter = () => {
     species,
     type,
     gender,
+    onChangeName,
+    onChangeSpecies,
+    onChangeType,
+    onChangeGender,
+    onChangeStatus,
     filter,
     clear,
   };
