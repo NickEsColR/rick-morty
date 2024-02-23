@@ -16,8 +16,6 @@ export const EpisodeList = () => {
 
   const { loading, hasFilterError } = useList();
 
-  console.log(loading)
-
   const { getFilter } = useEpisodeFilter();
 
   if (hasFilterError) {
@@ -29,7 +27,6 @@ export const EpisodeList = () => {
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        console.log(episodes),
         <div className="container-episodes">
           {episodes.map((episode) => (
             <EpisodeItem key={episode.id} episode={episode} />
