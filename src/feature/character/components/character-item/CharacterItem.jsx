@@ -47,5 +47,5 @@ export const CharacterItem = ({ character }) => {
     </div>
   );
 
-  return <Card Image={Image} Info={Info} />;
+  return <Card Image={Image} Info={Info} size={'md'}/>;
 };

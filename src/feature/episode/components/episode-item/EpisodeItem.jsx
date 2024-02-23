@@ -11,7 +11,7 @@ import PropTypes from "prop-types";
 export const EpisodeItem = ({ episode }) => {
   const Image = () => <img src={genericEpisodeImage} alt={episode.name} />;
   const Info = () => (
-    <div className="Episode-container">
+    <div className="episode-container">
       <h3>{episode.name}</h3>
       <p>
         <span className="text-grey">Episode: </span>
