@@ -7,9 +7,10 @@ import "./Pagination.css";
  * @param {Object} props - Component props
  * @param {string} props.resource - Resource of API to request
  * @param {Function} props.setItems - Function to set the items of the list
+ * @param {Function} props.getFilter - Function to get the filter string to apply to the request
  * @returns {JSX.Element}
  */
-export const Pagination = memo(({ resource, setItems }) => {
+export const Pagination = memo(({ resource, setItems, getFilter }) => {
   const {
     actualPage,
     totalPages,
@@ -26,7 +27,7 @@ export const Pagination = memo(({ resource, setItems }) => {
    * @param {string} page 
    */
   const changePage = (page) => {
-    changeListPage(page, resource, setItems);
+    changeListPage(page, resource, setItems, getFilter());
   };
 
   /**

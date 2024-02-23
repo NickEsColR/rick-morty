@@ -27,10 +27,16 @@ export const useCharacterFilter = () => {
   const { setCharacters } = useCharacters();
 
   /**
+   * Function to get the filter string to apply to the request
+   */
+  const getFilter = () => {
+    return `&name=${name}&status=${status}&species=${species}&type=${type}&gender${gender}`;
+  }
+  /**
    * Method to filter the characters
    */
   const filter = () => {
-    const filter = `&name=${name}&status=${status}&species=${species}&type=${type}&gender${gender}`;
+    const filter = getFilter();
     changeListPage(1, CHARACTERS, setCharacters, filter);
   };
 
@@ -97,6 +103,7 @@ export const useCharacterFilter = () => {
     onChangeType,
     onChangeGender,
     onChangeStatus,
+    getFilter,
     filter,
     clear,
   };

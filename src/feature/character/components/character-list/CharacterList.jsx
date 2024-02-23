@@ -5,6 +5,7 @@ import { Pagination } from "../../../../components/pagination/Pagination";
 import { CHARACTERS } from "../../../../Constants/ResourcesAPI";
 import { FilterError } from "../../../../components/filter-error/FilterError";
 import { useList } from "../../../../hooks/useList";
+import { useCharacterFilter } from "../../hooks/useCharacterFilter";
 
 /**
  * Component that renders the list of characters
@@ -14,6 +15,8 @@ export const CharacterList = () => {
   const { characters, setCharacters } = useCharacters();
 
   const { loading, hasFilterError } = useList();
+
+  const { getFilter } = useCharacterFilter();
 
   if (hasFilterError) {
     return <FilterError />;
@@ -33,6 +36,7 @@ export const CharacterList = () => {
       <Pagination
         resource={CHARACTERS}
         setItems={setCharacters}
+        getFilter={getFilter}
       />
     </>
   );
