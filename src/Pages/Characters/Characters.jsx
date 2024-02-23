@@ -4,6 +4,7 @@ import { CharacterContextProvider } from "../../feature/character/contexts/Chara
 import { PaginationContextProvider } from "../../contexts/PaginationContext";
 import { CharacterFilterContextProvider } from "../../feature/character/contexts/CharacterFilterContext";
 import { CharacterFilter } from "../../feature/character/components/character-filter/CharacterFilter";
+import { ListContextProvider } from "../../contexts/ListContext";
 
 /**
  * Component that renders characters page
@@ -11,17 +12,19 @@ import { CharacterFilter } from "../../feature/character/components/character-fi
  */
 export const Characters = () => {
   return (
-    <PaginationContextProvider>
-      <CharacterContextProvider>
-        <CharacterFilterContextProvider>
-          <div className="characters">
-            <h1 className="title">Characters</h1>
-            <CharacterFilter>
-              <CharacterList />
-            </CharacterFilter>
-          </div>
-        </CharacterFilterContextProvider>
-      </CharacterContextProvider>
-    </PaginationContextProvider>
+    <ListContextProvider>
+      <PaginationContextProvider>
+        <CharacterContextProvider>
+          <CharacterFilterContextProvider>
+            <div className="characters">
+              <h1 className="title">Characters</h1>
+              <CharacterFilter>
+                <CharacterList />
+              </CharacterFilter>
+            </div>
+          </CharacterFilterContextProvider>
+        </CharacterContextProvider>
+      </PaginationContextProvider>
+    </ListContextProvider>
   );
 };

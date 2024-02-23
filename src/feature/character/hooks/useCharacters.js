@@ -6,13 +6,13 @@ import { useContext } from "react";
  * @returns {Object}
  */
 export const useCharacters = () => {
-  const [characters, setCharacters, loading, setLoading] =
-    useContext(CharacterContext);
+  const [
+    characters,
+    setCharacters,
+  ] = useContext(CharacterContext);
 
   return {
     characters,
     setCharacters,
-    loading,
-    setLoading,
   };
 };
