@@ -7,10 +7,9 @@ import "./Pagination.css";
  * @param {Object} props - Component props
  * @param {string} props.resource - Resource of API to request
  * @param {Function} props.setItems - Function to set the items of the list
- * @param {Function} props.setLoading - Function to set the loading state
  * @returns {JSX.Element}
  */
-export const Pagination = memo(({ resource, setItems, setLoading }) => {
+export const Pagination = memo(({ resource, setItems }) => {
   const {
     actualPage,
     totalPages,
@@ -27,16 +26,15 @@ export const Pagination = memo(({ resource, setItems, setLoading }) => {
    * @param {string} page 
    */
   const changePage = (page) => {
-    setLoading(true);
-    changeListPage(page, resource, setLoading, setItems);
+    changeListPage(page, resource, setItems);
   };
 
   /**
    * Pagination is mount, get the first page of the list
    */
   useEffect(() => {
-    getFirstItems(resource, setLoading, setItems);
-  },[getFirstItems, resource, setLoading, setItems]);
+    getFirstItems(resource, setItems);
+  },[getFirstItems, resource, setItems]);
 
   /**
    * Page is changed, get the new list

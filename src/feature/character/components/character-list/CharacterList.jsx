@@ -3,7 +3,6 @@ import { CharacterItem } from "../character-item/CharacterItem";
 import { useCharacters } from "../../hooks/useCharacters";
 import { Pagination } from "../../../../components/pagination/Pagination";
 import { CHARACTERS } from "../../../../Constants/ResourcesAPI";
-import { CharacterFilter } from "../character-filter/CharacterFilter";
 import { FilterError } from "../../../../components/filter-error/FilterError";
 import { useList } from "../../../../hooks/useList";
 
@@ -14,7 +13,7 @@ import { useList } from "../../../../hooks/useList";
 export const CharacterList = () => {
   const { characters, setCharacters } = useCharacters();
 
-  const { loading, setLoading, hasFilterError } = useList();
+  const { loading, hasFilterError } = useList();
 
   if (hasFilterError) {
     return <FilterError />;
@@ -33,7 +32,6 @@ export const CharacterList = () => {
       )}
       <Pagination
         resource={CHARACTERS}
-        setLoading={setLoading}
         setItems={setCharacters}
       />
     </>

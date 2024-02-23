@@ -1,6 +1,7 @@
 import { useCallback, useContext } from "react";
 import { PaginationContext } from "../contexts/PaginationContext";
 import { ReqApi } from "../utils/API/ReqApi";
+import { useList } from "./useList";
 
 /**
  * Hook to manage the pagination of a list
@@ -20,28 +21,33 @@ export const usePagination = () => {
     setIsLastPage,
   ] = useContext(PaginationContext);
 
+  const { setLoading, setHasFilterError } = useList();
+
   /**
    * Function to change the page of the list
    * @param {string} page - page to request from the API
    * @param {string} resource - Resource of API to request
-   * @param {function} setLoading - Function to set the loading state
    * @param {function} setItems - Function to set the items of the list
    * @param {string} filters - Filters to apply to the request
    * @returns {Promise<void>}
    */
   const changeListPage = useCallback(
-    async (page, resource, setLoading, setItems, filters = "") => {
+    async (page, resource, setItems, filters = "") => {
+      setLoading(true);
+      setHasFilterError(false);
       const options = `?page=${page}${filters}`;
       const response = await ReqApi(resource, options);
       setActualPage(page);
       if (response.error) {
+        setLoading(false);
+        setHasFilterError(true);
         return;
       }
       setTotalPages(response.info.pages);
       setItems(response.results);
       setLoading(false);
     },
-    [setActualPage, setTotalPages]
+    [setActualPage, setTotalPages, setLoading, setHasFilterError]
   );
 
   /**

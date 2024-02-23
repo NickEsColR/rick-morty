@@ -24,15 +24,14 @@ export const useCharacterFilter = () => {
   
   const { changeListPage } = usePagination();
 
-  const { setCharacters, setLoading } = useCharacters();
+  const { setCharacters } = useCharacters();
 
   /**
    * Method to filter the characters
    */
   const filter = () => {
-    setLoading(true);
     const filter = `&name=${name}&status=${status}&species=${species}&type=${type}&gender${gender}`;
-    changeListPage(1, CHARACTERS, setLoading, setCharacters, filter);
+    changeListPage(1, CHARACTERS, setCharacters, filter);
   };
 
   /**
@@ -44,8 +43,7 @@ export const useCharacterFilter = () => {
     setSpecies("");
     setType("");
     setGender("");
-    setLoading(true);
-    changeListPage(1, CHARACTERS, setLoading, setCharacters);
+    changeListPage(1, CHARACTERS, setCharacters);
   };
 
   /**
