@@ -77,8 +77,8 @@ export const usePagination = () => {
    * Function to get the first page of the list
    */
   const getFirstItems = useCallback(
-    (resource, setLoading, setItems) => {
-      changeListPage(1, resource, setLoading, setItems);
+    (resource, setItems) => {
+      changeListPage(1, resource, setItems);
     },
     [changeListPage]
   );

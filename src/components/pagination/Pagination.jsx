@@ -1,5 +1,6 @@
 import { memo, useEffect } from "react";
 import { usePagination } from "../../hooks/usePagination";
+import PropTypes from "prop-types";
 import "./Pagination.css";
 
 /**
@@ -24,7 +25,7 @@ export const Pagination = memo(({ resource, setItems, getFilter }) => {
 
   /**
    * Function to change the page of the list
-   * @param {string} page 
+   * @param {string} page
    */
   const changePage = (page) => {
     changeListPage(page, resource, setItems, getFilter());
@@ -35,18 +36,14 @@ export const Pagination = memo(({ resource, setItems, getFilter }) => {
    */
   useEffect(() => {
     getFirstItems(resource, setItems);
-  },[getFirstItems, resource, setItems]);
+  }, [getFirstItems, resource, setItems]);
 
   /**
    * Page is changed, get the new list
    */
   useEffect(() => {
     getShowPages(actualPage, totalPages);
-  }, [
-    getShowPages,
-    actualPage,
-    totalPages,
-  ]);
+  }, [getShowPages, actualPage, totalPages]);
 
   return (
     <nav className="pagination" role="navigation" aria-label="pagination">
@@ -100,3 +97,9 @@ export const Pagination = memo(({ resource, setItems, getFilter }) => {
     </nav>
   );
 });
+
+Pagination.propTypes = {
+  resource: PropTypes.string.isRequired,
+  setItems: PropTypes.func.isRequired,
+  getFilter: PropTypes.func.isRequired,
+};

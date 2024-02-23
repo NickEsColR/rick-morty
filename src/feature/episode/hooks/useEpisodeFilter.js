@@ -39,10 +39,7 @@ export const useEpisodeFilter = () => {
    */
   const clear = () => {
     setName("");
-    setStatus("");
-    setSpecies("");
-    setType("");
-    setGender("");
+    setEpisode("");
     changeListPage(1, EPISODES, setEpisodes);
   };
 

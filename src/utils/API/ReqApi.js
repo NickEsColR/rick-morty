@@ -6,8 +6,9 @@
  */
 export const ReqApi = async (resource, options="") => {
   const url = `https://rickandmortyapi.com/api/${resource}/${options}`;
+
   const api = await fetch(url);
   const response = await api.json();
-  
+
   return (response);
 };

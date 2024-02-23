@@ -5,14 +5,14 @@ import { useContext } from "react";
  * This function is a hook to use the Episodes from the EpisodeContext
  * @returns {Object}
  */
-export const useEpisodes = () => {
+export const useEpisode = () => {
   const [
-    Episodes,
+    episodes,
     setEpisodes,
   ] = useContext(EpisodeContext);
 
   return {
-    Episodes,
+    episodes,
     setEpisodes,
   };
 };
