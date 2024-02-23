@@ -30,7 +30,7 @@ export const useCharacterFilter = () => {
    * Function to get the filter string to apply to the request
    */
   const getFilter = () => {
-    return `&name=${name}&status=${status}&species=${species}&type=${type}&gender${gender}`;
+    return `&name=${name}&status=${status}&species=${species}&type=${type}&gender=${gender}`;
   }
   /**
    * Method to filter the characters
