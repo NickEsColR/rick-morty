@@ -1,4 +1,4 @@
-import './CharacterItem.css';
+import "./CharacterItem.css";
 import { Card } from "../../../../components/card/Card";
 
 export const CharacterItem = ({ character }) => {
@@ -12,20 +12,37 @@ export const CharacterItem = ({ character }) => {
             <span className="alive" />
             Alive
           </>
-        ) : (
+        ) : character.status === "Dead" ? (
           <>
             <span className="dead" />
             Dead
           </>
+        ) : (
+          <>
+            <span className="unknown" />
+            Unknown
+          </>
         )}
       </h6>
       <p>
-        <span className="text-grey">Episodes: </span>
-        <span>{character.episode.length}</span>
-      </p>
-      <p>
         <span className="text-grey">Specie: </span>
         <span>{character.species}</span>
+      </p>
+      <p>
+        <span className="text-grey">Gender: </span>
+        <span>{character.gender}</span>
+      </p>
+      <p>
+        <span className="text-grey">Type: </span>
+        {character.type === "" ? (
+          <span>unknown</span>
+        ) : (
+          <span>{character.type}</span>
+        )}
+      </p>
+      <p>
+        <span className="text-grey">Episodes: </span>
+        <span>{character.episode.length}</span>
       </p>
     </div>
   );
