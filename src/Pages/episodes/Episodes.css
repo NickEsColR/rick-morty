@@ -5,4 +5,7 @@
 
 .episodes h1 {
   margin-top: 0;
+  letter-spacing: 3px;
+  font-family: Oxygen !important;
+  font-weight: 900 !important;
 }
