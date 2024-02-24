@@ -1,5 +1,5 @@
 import "./LocationItem.css";
-import genericLocationImage from "../../../../assets/img/rick-and-morty-Locations.jpg";
+import genericLocationImage from "../../../../assets/img/rick-and-morty-locations.png";
 import { Card } from "../../../../components/card/Card";
 import PropTypes from "prop-types";
 
