@@ -22,7 +22,6 @@ export const LocationFilter = ({ children }) => {
   return (
     <>
       <div className="filter-container">
-        <div className="search-bars-container">
           <SearchBar labelText="Name" value={name} onChange={onChangeName} />
           <SearchBar labelText="Type" value={type} onChange={onChangeType} />
           <SearchBar
@@ -30,7 +29,6 @@ export const LocationFilter = ({ children }) => {
             value={dimension}
             onChange={onChangeDimension}
           />
-        </div>
         <div className="btn-container">
           <button onClick={filter}>Filter</button>
           <button onClick={clear}>Clear</button>

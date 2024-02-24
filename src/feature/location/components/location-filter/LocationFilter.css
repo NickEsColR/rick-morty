@@ -1,4 +1,4 @@
-.characters .filter-container{
+.locations .filter-container{
   display: grid;
   grid-template-columns: 55% 45%;
   grid-auto-rows: 50px;
@@ -7,6 +7,8 @@
   padding: 1%;
   padding-bottom: 0;
 
+  height: 18vh;
+
   box-sizing:border-box;
   border-radius: 5px;
   background-color: rgba(35, 37, 43, 0.726);
@@ -14,15 +16,15 @@
   color: white;
 }
 
-.characters .search-bar-container{
+.locations .search-bar-container{
   height: 20px;
 }
 
-.characters .dropdown-menu{
+.locations .dropdown-menu{
   height: 20px;
 }
 
-.characters .filter-container button{
+.locations .filter-container button{
   background-color: #2b5351;
   color: white;
   border: none;
