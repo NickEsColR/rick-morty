@@ -14,12 +14,13 @@
 }
 
 .main {
+  min-height: 100vh;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 10vh;
-  padding-bottom: 20px;
 
   background: rgb(40, 44, 52);
   background: linear-gradient(180deg, rgba(40, 44, 52, 1) 20%, rgba(57, 59, 64, 1) 40%, rgba(94, 96, 99, 1) 60%, rgba(57, 59, 64, 1) 80%, rgba(40, 44, 52, 1) 100%);

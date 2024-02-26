@@ -4,6 +4,7 @@ import { Characters } from "../Pages/characters/Characters";
 import { Locations } from "../Pages/locations/Locations";
 import { Episodes } from "../Pages/episodes/Episodes";
 import { Header } from "../components/Header/Header";
+import { Error } from "../Pages/error-404/Error";
 
 /**
  * This function is used to manage the routes of the app
@@ -19,7 +20,7 @@ export const Router = () => {
           <Route path={PATHS.CHARACTERS} element={<Characters />} />
           <Route path={PATHS.LOCATIONS} element={<Locations />} />
           <Route path={PATHS.EPISODES} element={<Episodes />} />
-          <Route path={PATHS.NOT_FOUND} element={<h1>Not Found</h1>} />
+          <Route path={PATHS.NOT_FOUND} element={<Error/>} />
         </Routes>
       </main>
     </BrowserRouter>
