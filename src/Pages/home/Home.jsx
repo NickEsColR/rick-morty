@@ -1,6 +1,39 @@
 import { Card } from "../../components/card/Card";
 import "./Home.css";
 
+const characterImage = () => (
+  <img
+    src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+    alt="rick"
+  />
+);
+const characterInfo = () => (
+  <>
+    <h4>Characters</h4>
+    <p>Get to know the characters of the show</p>
+  </>
+);
+
+const locationImage = () => (
+  <img src="../../assets/img/rick-and-morty-locations.png" alt="location" />
+);
+const locationInfo = () => (
+  <>
+    <h4>Locations</h4>
+    <p>Explore the different locations in the show</p>
+  </>
+);
+
+const episodeImage = () => (
+  <img src="../../assets/img/rick-and-morty-episodes.jpg" alt="episode" />
+);
+const episodeInfo = () => (
+  <>
+    <h4>Episodes</h4>
+    <p>Get information about the episodes of the show</p>
+  </>
+);
+
 /**
  * Component that represents the home page
  * @returns {JSX.Element}
@@ -21,52 +54,13 @@ export const Home = () => {
       <h3>Explore the rick and morty universe</h3>
       <div className="features-container">
         <div className="feature">
-          <Card
-            Image={
-              <img
-                src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-                alt="rick"
-              />
-            }
-            Info={
-              <>
-                <h4>Characters</h4>
-                <p>Get to know the characters of the show</p>
-              </>
-            }
-          />
+          <Card Image={characterImage} Info={characterInfo} />
         </div>
         <div className="feature">
-          <Card
-            Image={
-              <img
-                src="../../assets/img/rick-and-morty-locations.png"
-                alt="location"
-              />
-            }
-            Info={
-              <>
-                <h4>Locations</h4>
-                <p>Explore the different locations in the show</p>
-              </>
-            }
-          />
+          <Card Image={locationImage} Info={locationInfo} />
         </div>
         <div className="feature">
-          <Card
-            Image={
-              <img
-                src="../../assets/img/rick-and-morty-episodes.jpg"
-                alt="episode"
-                Info={
-                  <>
-                    <h4>Episodes</h4>
-                    <p>Get information about the episodes of the show</p>
-                  </>
-                }
-              />
-            }
-          />
+          <Card Image={episodeImage} Info={episodeInfo} />
         </div>
       </div>
       <h3>Technologies Used</h3>
