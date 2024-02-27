@@ -43,7 +43,7 @@ export const Home = () => {
     <>
       <div className="welcome-background">
         <div className="welcome-message">
-          <h3>Rick And Morty Wiki</h3>
+          <h1>Rick And Morty Wiki</h1>
           <p>This web gives information about rick and morty</p>
           <p>
             An animated science fiction sitcom created by Justin Roiland and Dan
@@ -51,7 +51,7 @@ export const Home = () => {
           </p>
         </div>
       </div>
-      <h3>Explore the rick and morty universe</h3>
+      <h2 className="title">Explore the rick and morty universe</h2>
       <div className="features-container">
         <div className="feature">
           <Card Image={characterImage} Info={characterInfo} />
@@ -63,9 +63,11 @@ export const Home = () => {
           <Card Image={episodeImage} Info={episodeInfo} />
         </div>
       </div>
-      <h3>Technologies Used</h3>
-      <p>This website is built with the following technologies</p>
-      <span className="btn">View on GitHub</span>
+      <h2 className="title">Technologies Used</h2>
+      <div className="technologies-message">
+        <p>This website is built with the following technologies</p>
+        <span className="btn">View on GitHub</span>
+      </div>
       <div className="technologies-container">
         <div className="technology">
           <h4>React</h4>
