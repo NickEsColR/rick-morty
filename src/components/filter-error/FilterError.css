@@ -1,0 +1,15 @@
+.filter-error{
+  margin: 8vh;
+}
+
+.filter-error h1{
+  font-size: 2rem;
+  margin-top: 0;
+  color: rgb(139, 6, 6);
+}
+
+.filter-error h2{
+  font-size: 1.4rem;
+  margin-top: 0;
+  font-weight: 500;
+}

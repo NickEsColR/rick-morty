@@ -1,0 +1,32 @@
+.card{
+  display: flex;
+  background: #3c3e44;
+  margin: 20px 10px;
+  border-radius: 10px;
+  align-items: flex-start;
+}
+
+.card.sm{
+  height: 200px;
+}
+
+.card.md{
+  height: 250px;
+}
+
+.card.lg{
+  height: 300px;
+}
+
+.image-container{
+  width: 60%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px;
+}
+
+.info-container{
+  width: 40%;
+  margin-left: 10px;
+  text-align: left;
+}

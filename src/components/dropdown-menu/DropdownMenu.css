@@ -1,0 +1,21 @@
+.dropdown-menu{
+  display: grid;
+  grid-template-columns: 15% 85%;
+  align-items: center;
+}
+
+.dropdown-menu label{
+  width:100%;
+  grid-column: 1;
+}
+
+.dropdown-menu select{
+  grid-column: 2;
+
+  border: 1px solid #000;
+  width: 90%;
+  padding: 5px;
+  margin: 0;
+  border-radius: 5px;
+
+}

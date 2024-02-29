@@ -1,0 +1,94 @@
+.welcome-background{
+  background: url(../../assets//img/rick-and-morty-welcome.jpg) no-repeat center center;
+  background-size: cover;
+
+  margin-top: 5vh;
+
+  width:80%;
+  height: 70vh;
+
+  border-radius: 2%;
+  box-shadow: 0 0 15px 0 rgba(61, 60, 60, 0.5);
+}
+
+.welcome-message {
+  text-align: left;
+  margin-top: 5vh;
+  margin-left: 5vw;
+}
+
+.welcome-message h1 {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.welcome-message p {
+  margin:0;
+  font-size: 1em;
+}
+
+h2.title{
+  font-size: 1.5em;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+
+  text-align: left;
+  width: 80%;
+}
+
+.features-container{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5vh;
+  width: 80%;
+}
+
+.feature .card{
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover{
+    opacity: 0.6;
+  }
+}
+
+.technologies-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  width: 80%;
+}
+
+.technology {
+  background: #42444b;
+  width: 22%;
+  border-radius: 5%;
+  cursor: pointer;
+  
+  &:hover{
+    background-color: #505155;
+  }
+}
+.technologies-message{
+  width: 80%;
+  text-align: left;
+}
+.technologies-message p{
+  margin-bottom: 5vh;
+}
+  
+.btn {
+  background: #35363b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #505155;
+  }
+}
+

@@ -1,0 +1,41 @@
+.error-container {
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url(../../assets/img/rick-and-morty-404-backgorund.jpg) !important;
+  background-position: right bottom; 
+  background-size:100% 100%;
+  background-repeat: no-repeat;
+
+  
+}
+
+.error-message {
+  width: 50%;
+  height: 80%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: rgb(59, 196, 166)
+}
+
+.error-message h1 {
+  font-size: 3rem;
+  font-family: Oxygen;
+  margin-bottom: 1rem;
+}
+
+.error-message h3 {
+  font-size: 2rem;
+  font-family: Oxygen;
+  margin-bottom: 1rem;
+}
+
+.error-message p {
+  font-size: 1.5rem;
+  font-family: Oxygen;
+  margin-bottom: 1rem;
+}
