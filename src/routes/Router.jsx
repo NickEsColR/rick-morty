@@ -6,6 +6,7 @@ import { Episodes } from "../Pages/episodes/Episodes";
 import { Header } from "../components/Header/Header";
 import { Error } from "../Pages/error-404/Error";
 import { Home } from "../Pages/home/Home";
+import { PathContextProvider } from "./PathContext";
 
 /**
  * This function is used to manage the routes of the app
@@ -14,16 +15,18 @@ import { Home } from "../Pages/home/Home";
 export const Router = () => {
   return (
     <BrowserRouter>
-      <Header />
-      <main className="main">
-        <Routes>
-          <Route path={PATHS.HOME} element={<Home />} />
-          <Route path={PATHS.CHARACTERS} element={<Characters />} />
-          <Route path={PATHS.LOCATIONS} element={<Locations />} />
-          <Route path={PATHS.EPISODES} element={<Episodes />} />
-          <Route path={PATHS.NOT_FOUND} element={<Error />} />
-        </Routes>
-      </main>
+      <PathContextProvider>
+        <Header />
+        <main className="main">
+          <Routes>
+            <Route path={PATHS.HOME} element={<Home />} />
+            <Route path={PATHS.CHARACTERS} element={<Characters />} />
+            <Route path={PATHS.LOCATIONS} element={<Locations />} />
+            <Route path={PATHS.EPISODES} element={<Episodes />} />
+            <Route path={PATHS.NOT_FOUND} element={<Error />} />
+          </Routes>
+        </main>
+      </PathContextProvider>
     </BrowserRouter>
   );
 };
