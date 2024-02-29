@@ -43,6 +43,15 @@ h2.title{
   width: 80%;
 }
 
+.feature .card{
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover{
+    opacity: 0.6;
+  }
+}
+
 .technologies-container {
   display: flex;
   justify-content: space-between;
