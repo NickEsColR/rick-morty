@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { PATHS } from "../Constants/Paths";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { PathContext } from "./PathContext";
 
 /**
@@ -13,24 +13,25 @@ export const useCustomNav = () => {
   const navigate = useNavigate();
 
   const navigateHome = () => {
-    setActiveItem(PATHS.HOME);
     navigate(PATHS.HOME);
   };
 
   const navigateCharacters = () => {
-    setActiveItem(PATHS.CHARACTERS);
     navigate(PATHS.CHARACTERS);
   };
 
   const navigateLocations = () => {
-    setActiveItem(PATHS.LOCATIONS);
     navigate(PATHS.LOCATIONS);
   };
 
   const navigateEpisodes = () => {
-    setActiveItem(PATHS.EPISODES);
+
     navigate(PATHS.EPISODES);
   };
+
+  useEffect(() => {
+    setActiveItem(window.location.pathname);
+  })
 
   return {
     activeItem,
