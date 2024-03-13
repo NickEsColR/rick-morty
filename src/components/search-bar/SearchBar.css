@@ -9,6 +9,7 @@
   width: 100%;
   grid-column: 1;
   text-transform: capitalize;
+  text-align: left;
 }
 
 .search-bar{
