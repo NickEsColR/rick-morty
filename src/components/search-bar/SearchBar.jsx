@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
  */
 export const SearchBar = ({ labelText, value, onChange }) => {
   return (
-    <div className="search-bar-container">
+    <div className={`search-bar-container ${labelText}`}>
       <label>{labelText}: </label>
       <input className="search-bar" type="text" name={labelText} value={value} onChange={onChange}/>
     </div>

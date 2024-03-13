@@ -31,7 +31,7 @@
   margin: 0 3vw;
 
   width: 10vw;
-  height: 5vh;
+  height: 30px;
 
   cursor: pointer;
 
@@ -41,4 +41,27 @@
     background-color: #407573;
     color: #f5f5f5;
   }
+}
+
+@media (max-width: 480px){
+  .characters .filter-container{
+    grid-template-columns: 100%;
+  }
+  .characters .filter-container button{
+    width: 20vw;
+  }
+
+  .characters .filter-container .specie{
+    grid-row:2;
+  }
+  .characters .filter-container .type{
+    grid-row:3;
+  }
+  .characters .filter-container .status{
+    grid-row:4;
+  }
+  .characters .filter-container .gender{
+    grid-row:5;
+  }
+
 }

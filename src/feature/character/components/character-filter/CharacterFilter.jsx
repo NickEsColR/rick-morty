@@ -28,25 +28,25 @@ export const CharacterFilter = ({ children }) => {
   return (
     <>
       <div className="filter-container">
-        <SearchBar labelText="Name" value={name} onChange={onChangeName} />
+        <SearchBar labelText="name" value={name} onChange={onChangeName}/>
         <DropdownMenu
-          labelText="Status"
+          labelText="status"
           options={STATUS}
           value={status}
           onChange={onChangeStatus}
         />
         <SearchBar
-          labelText="Specie"
+          labelText="specie"
           value={species}
           onChange={onChangeSpecies}
         />
         <DropdownMenu
-          labelText="Gender"
+          labelText="gender"
           options={GENDER}
           value={gender}
           onChange={onChangeGender}
         />
-        <SearchBar labelText="Type" value={type} onChange={onChangeType} />
+        <SearchBar labelText="type" value={type} onChange={onChangeType} />
         <div className="btn-container">
           <button onClick={filter}>Filter</button>
           <button onClick={clear}>Clear</button>

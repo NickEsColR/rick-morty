@@ -11,7 +11,7 @@ import PropTypes from 'prop-types'
  */
 export const DropdownMenu = ({labelText, options, value, onChange}) => {
   return (
-    <div className='dropdown-menu'>
+    <div className={`dropdown-menu ${labelText}`}>
       <label>{labelText}: </label>
       <select value={value} onChange={onChange}>
         <option value='' disabled hidden>Select an option</option>
