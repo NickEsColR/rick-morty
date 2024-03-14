@@ -1,4 +1,3 @@
-import "./CharacterList.css";
 import { CharacterItem } from "../character-item/CharacterItem";
 import { useCharacters } from "../../hooks/useCharacters";
 import { Pagination } from "../../../../components/pagination/Pagination";
@@ -27,7 +26,7 @@ export const CharacterList = () => {
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        <div className="container-characters">
+        <div className="container-cards">
           {characters.map((character) => (
             <CharacterItem key={character.id} character={character} />
           ))}

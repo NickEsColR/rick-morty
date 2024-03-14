@@ -1,6 +1,6 @@
 .episodes .filter-container {
   width: 100%;
-  height: 20vh;
+  height: 120px;
 
   display: flex;
   align-items: center;
@@ -23,7 +23,8 @@
   align-items: center;
 
   width: 100%;
-  height: 16vh;
+  height: 60%;
+  /* height: 96px; */
 }
 
 .episodes .search-bar-container {
@@ -38,7 +39,8 @@
   align-items: center;
 
   width: 100%;
-  height: 16vh;
+  height: 40%;
+  /* height: 96px; */
 }
 
 .episodes .btn-container  button {
@@ -49,8 +51,8 @@
   padding: 5px;
   margin: 0 3vw;
 
-  width: 12vw;
-  height: 7vh;
+  width: 112px;
+  height: 32px;
 
   cursor: pointer;
 
@@ -61,3 +63,9 @@
     color: #f5f5f5;
   }
 }
+
+@media (max-width: 768px) {
+  .episodes .filter-container {
+    flex-direction:column;
+  }
+} 

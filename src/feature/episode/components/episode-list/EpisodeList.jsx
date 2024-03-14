@@ -1,4 +1,3 @@
-import "./EpisodeList.css";
 import { EpisodeItem } from "../episode-item/EpisodeItem";
 import { useEpisode } from "../../hooks/useEpisode";
 import { Pagination } from "../../../../components/pagination/Pagination";
@@ -27,7 +26,7 @@ export const EpisodeList = () => {
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        <div className="container-episodes">
+        <div className="container-cards">
           {episodes.map((episode) => (
             <EpisodeItem key={episode.id} episode={episode} />
           ))}

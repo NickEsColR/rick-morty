@@ -1,4 +1,3 @@
-import "./LocationList.css";
 import { LocationItem } from "../location-item/LocationItem";
 import { useLocation } from "../../hooks/useLocation";
 import { Pagination } from "../../../../components/pagination/Pagination";
@@ -27,7 +26,7 @@ export const LocationList = () => {
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        <div className="container-locations">
+        <div className="container-cards">
           {locations.map((location) => (
             <LocationItem key={location.id} location={location} />
           ))}
