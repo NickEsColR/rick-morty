@@ -1,6 +1,6 @@
 .app-header {
   background-color: #282c34;
-  min-height: 10vh;
+  height: 12vh;
   width: 100%;
   padding-inline-end: 64px;
 
@@ -10,7 +10,7 @@
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content:space-between;
 
   font-size: calc(10px + 2vmin);
   color: white;
@@ -37,6 +37,7 @@
 .menu{
   justify-content: flex-end;
   padding-right: 50px;
+  height:26px;
 }
 
 .menu-item{
@@ -59,4 +60,21 @@
 
 .active{
   border-bottom: 2px solid #738f93;
+}
+
+@media (max-width: 768px){
+  .app-header{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    height:20vh;
+  }
+  .menu{
+    padding-left:10px;
+    margin-top: 8px;
+  }
+  .logo-container{
+    padding-left:25px;
+  }
+
 }

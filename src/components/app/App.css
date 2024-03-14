@@ -15,6 +15,7 @@
 
 .main {
   min-height: 100vh;
+  min-width: 100vw;
   
   display: flex;
   flex-direction: column;
@@ -37,7 +38,9 @@
   .container-cards {
     grid-template-columns: auto auto;
   }
-  
+  .main{
+    margin-top: 20vh;
+  }
 }
 
 @media screen and (max-width: 480px) {
